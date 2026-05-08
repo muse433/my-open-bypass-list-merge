@@ -1,0 +1,39 @@
+name: Daily Merge
+
+on:
+  schedule:
+    # 每天 UTC 00:00（北京时间 08:00）运行
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run merge script
+        run: python3 merge.py
+
+      - name: Commit and push updated list
+        run: |
+          git config user.name "my-open-bypass-list-merge[bot]"
+          git config user.email "musag6456@gmail.com"
+          git add merged.list
+          # 只有内容变化时才 commit 和 push
+          if git diff --cached --quiet; then
+            echo "No changes to merged.list — skipping commit"
+          else
+            git commit -m "chore: auto-merge $(date -u '+%Y-%m-%d')"
+            git push
+          fi
