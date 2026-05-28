@@ -31,6 +31,8 @@ URLS = [
 EXTRA_RULES = [
     # Jina AI (jina.ai)
     "DOMAIN-SUFFIX,jina.ai",
+    # YouMind (youmind.com)
+    "DOMAIN-SUFFIX,youmind.com",
 ]
 
 OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "merged.list")
