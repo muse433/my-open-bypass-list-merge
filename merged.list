@@ -1,9 +1,9 @@
 # my-open-bypass-list-merge — 自动合并规则列表
 # https://github.com/muse433/my-open-bypass-list-merge
 # 规则源: 6 个
-# 原始规则: 489 条
-# 去重后: 407 条
-# 生成时间: 2026-05-28T04:01:35.195965
+# 原始规则: 490 条
+# 去重后: 408 条
+# 生成时间: 2026-05-28T12:48:29.037616
 
 DOMAIN-SUFFIX,redd.it
 DOMAIN-SUFFIX,reddit.com
@@ -412,3 +412,4 @@ DOMAIN-KEYWORD,developerprofiles
 DOMAIN-KEYWORD,generativelanguage
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,jina.ai
