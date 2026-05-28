@@ -27,6 +27,12 @@ URLS = [
     "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list",
 ]
 
+# ====== 手动追加规则（不在上游源中的域名） ======
+EXTRA_RULES = [
+    # Jina AI (jina.ai)
+    "DOMAIN-SUFFIX,jina.ai",
+]
+
 OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "merged.list")
 
 
@@ -84,6 +90,9 @@ def main():
             error_msg = f"  -> FAILED: {e}"
             print(error_msg)
             errors.append(f"# FAILED: {url} — {e}")
+
+    # 追加手动规则
+    all_rules.extend(EXTRA_RULES)
 
     # 去重（保持首次出现顺序）
     seen = set()
