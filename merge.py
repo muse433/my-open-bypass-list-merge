@@ -33,6 +33,9 @@ EXTRA_RULES = [
     "DOMAIN-SUFFIX,jina.ai",
     # YouMind (youmind.com)
     "DOMAIN-SUFFIX,youmind.com",
+    # Plasma
+    "DOMAIN-SUFFIX,plasma.org",
+    "DOMAIN-SUFFIX,plasma.to",
 ]
 
 OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "merged.list")
