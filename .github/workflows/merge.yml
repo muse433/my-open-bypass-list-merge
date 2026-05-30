@@ -4,6 +4,9 @@ on:
   schedule:
     # 每天 UTC 00:00（北京时间 08:00）运行
     - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
   workflow_dispatch:  # 支持手动触发
 
 permissions:
